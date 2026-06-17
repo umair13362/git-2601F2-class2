@@ -1,0 +1,463 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - HaOye Storefront</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="haoye-top-bar">
+    ⚡ <strong>GRAND OPENING SALE!</strong> Get an extra Rs. 2,000 off on your first order. Use code: <span class="bg-white text-dark px-2 py-0.5 rounded font-weight-bold">HAOYE2K</span> | <a href="category.html">Shop Now</a>
+  </div>
+
+  <!-- Global Navigation Header -->
+  <nav class="haoye-navbar">
+    <div class="container d-flex align-items-center justify-content-between gap-3">
+      
+      <a href="index.html" class="haoye-logo">
+        <svg viewBox="0 0 140 40" style="width: 130px; height: 38px;">
+          <text x="5" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="url(#logoGradient)">Ha</text>
+          <text x="42" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="#10b981">Oye</text>
+          <path d="M96,15 L101,20 L112,9" stroke="#ff6a3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <circle cx="104" cy="16" r="13" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="3,3" />
+        </svg>
+      </a>
+
+      <!-- Search input -->
+      <div class="search-container d-none d-md-block flex-grow-1 mx-3">
+        <input type="text" class="search-input" placeholder="Search products...">
+        <button class="search-mic voice-trigger-btn"><i class="fa-solid fa-microphone"></i></button>
+        <div class="search-suggestions"></div>
+      </div>
+
+      <!-- Action Utilities -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-link nav-link text-decoration-none d-none d-lg-flex align-items-center gap-1 text-muted" data-bs-toggle="modal" data-bs-target="#locationModal">
+          <i class="fa-solid fa-location-dot text-peach"></i>
+          <span class="location-name font-weight-bold" style="font-size: 0.85rem;">Select Location</span>
+        </button>
+
+        <button class="nav-action-btn theme-toggle-btn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="compare.html" class="nav-action-btn compare-trigger position-relative d-none d-md-flex" aria-label="Compare Products">
+          <i class="fa-solid fa-code-compare"></i>
+        </a>
+
+        <button class="nav-action-btn cart-trigger" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge-count cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Search Bar -->
+  <div class="container d-md-none my-3">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search products...">
+      <button class="search-mic voice-trigger-btn"><i class="fa-solid fa-microphone"></i></button>
+      <div class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <!-- Product Details Viewport -->
+  <main class="container py-4">
+    
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb text-sm">
+        <li class="breadcrumb-item"><a href="index.html" class="text-peach text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item"><a href="category.html" class="text-peach text-decoration-none" id="breadcrumb-cat-link">Catalog</a></li>
+        <li class="breadcrumb-item active text-muted" aria-current="page" id="breadcrumb-product-title">Product details</li>
+      </ol>
+    </nav>
+
+    <!-- Main Detail Section -->
+    <div class="row g-5">
+      
+      <!-- Left Column: Visual Gallery (col-md-6) -->
+      <div class="col-lg-5 col-12">
+        <div class="detail-gallery">
+          <!-- Main display window -->
+          <div class="gallery-main-wrapper" id="gallery-zoom-trigger">
+            <img src="" alt="" class="gallery-main-img" id="gallery-main-display">
+            <div class="zoom-magnifier" id="zoom-lens"></div>
+          </div>
+          
+          <!-- Thumbnails switcher -->
+          <div class="gallery-thumbs" id="gallery-thumbnails-list">
+            <!-- Populated dynamically by product.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Buying Box & Specifications (col-md-6) -->
+      <div class="col-lg-7 col-12">
+        
+        <!-- Info Headers -->
+        <div class="pb-3 border-bottom mb-3">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge bg-success px-3 py-2 rounded-3 text-xs" style="font-weight: 700;">
+              <i class="fa-solid fa-shield-halved me-1"></i> HaOye Assured
+            </span>
+            <span class="badge bg-light text-dark px-3 py-2 rounded-3 text-xs border" id="detail-brand-badge" style="font-weight: 700;">APPLE</span>
+          </div>
+          <h2 class="fw-bold mb-2" id="detail-product-title">Loading Product Title...</h2>
+          
+          <!-- Stars rating -->
+          <div class="d-flex align-items-center gap-3">
+            <div class="text-warning text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <span class="ms-1 fw-bold text-dark text-xs" id="detail-rating-score">4.8</span>
+            </div>
+            <span class="text-xs text-muted" id="detail-reviews-count">142 Customer Reviews</span>
+          </div>
+        </div>
+
+        <!-- Price Panel & Buy box -->
+        <div class="p-4 bg-card border rounded-4 shadow-sm mb-4">
+          <div class="d-flex align-items-baseline gap-2 mb-1">
+            <span class="text-xs text-muted fw-bold">HaOye Price:</span>
+            <h3 class="fw-extrabold text-peach mb-0" style="font-family: var(--font-heading);" id="detail-current-price">Rs. 0</h3>
+            <span class="original-price text-sm" id="detail-original-price">Rs. 0</span>
+            <span class="badge bg-danger text-xs rounded px-2" id="detail-discount-tag">8% OFF</span>
+          </div>
+          <div class="text-success text-xs fw-bold mb-4">
+            <i class="fa-solid fa-circle-check"></i> Free delivery included. Cash on Delivery eligible.
+          </div>
+          
+          <div class="text-sm border-top border-bottom py-3 mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <span class="text-muted">Installments:</span>
+              <span class="fw-bold text-dark">From Rs. 8,500/month</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="text-muted">Warranty:</span>
+              <span class="fw-bold text-dark">1 Year Official Brand Warranty</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="row g-2">
+            <div class="col-md-6 col-12">
+              <button class="btn btn-peach card-action-btn w-100 py-3 mt-0 rounded-pill font-weight-bold text-sm add-to-cart-trigger" id="detail-add-cart-btn" data-id="">
+                <i class="fa-solid fa-cart-plus me-1"></i> Add to Cart
+              </button>
+            </div>
+            <div class="col-md-6 col-12">
+              <button class="btn btn-teal card-action-btn w-100 py-3 mt-0 rounded-pill font-weight-bold text-sm text-white" id="detail-buy-now-btn">
+                <i class="fa-solid fa-bag-shopping me-1"></i> Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price Comparison Table Widget (PriceOye-special) -->
+        <div class="mb-4">
+          <h5 class="fw-bold mb-3">Compare Seller Prices</h5>
+          <div class="table-responsive rounded-4 border overflow-hidden">
+            <table class="table table-hover align-middle mb-0 text-sm">
+              <thead class="table-light">
+                <tr>
+                  <th>Seller</th>
+                  <th>Delivery</th>
+                  <th>Price</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody id="seller-comparison-rows">
+                <!-- Populated dynamically by product.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Interactive Price History Line Chart (Chart.js widget) -->
+    <div class="price-history-card">
+      <div class="price-history-header">
+        <div>
+          <h5 class="fw-bold mb-1"><i class="fa-solid fa-chart-line text-peach me-2"></i>Price History Trend</h5>
+          <span class="text-xs text-muted">Tracking market price changes over the last 6 months</span>
+        </div>
+        <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1.5 text-xs fw-bold">Lowest Price Guaranteed</span>
+      </div>
+      
+      <!-- Line Chart Canvas -->
+      <div style="position: relative; height: 260px; width: 100%;">
+        <canvas id="priceHistoryChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Product Specifications Accordion -->
+    <div class="mt-5">
+      <h3 class="mb-4">Specifications</h3>
+      <div class="accordion specs-accordion" id="specsAccordion">
+        <!-- Will be filled dynamically by product.js -->
+      </div>
+    </div>
+
+    <!-- User Reviews Section -->
+    <div class="mt-5 pt-4 border-top">
+      <h3 class="mb-4">Ratings & Reviews</h3>
+      <div class="row g-4">
+        
+        <!-- Ratings Breakdown bar details (col-md-4) -->
+        <div class="col-md-4 col-12">
+          <div class="p-4 bg-card border rounded-4 text-center h-100 shadow-sm">
+            <h1 class="fw-extrabold mb-1 text-peach" style="font-size: 3.5rem;" id="review-avg-score">4.8</h1>
+            <div class="text-warning mb-2 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-muted mb-4" id="review-totals-text">Based on 142 ratings</p>
+            
+            <!-- Bars -->
+            <div class="d-flex flex-column gap-2 text-xs">
+              <div class="d-flex align-items-center gap-2">
+                <span style="width: 45px;">5 Star</span>
+                <div class="progress flex-grow-1" style="height: 6px;"><div class="progress-bar bg-warning" style="width: 85%"></div></div>
+                <span class="text-muted" style="width: 30px;">85%</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span style="width: 45px;">4 Star</span>
+                <div class="progress flex-grow-1" style="height: 6px;"><div class="progress-bar bg-warning" style="width: 10%"></div></div>
+                <span class="text-muted" style="width: 30px;">10%</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span style="width: 45px;">3 Star</span>
+                <div class="progress flex-grow-1" style="height: 6px;"><div class="progress-bar bg-warning" style="width: 3%"></div></div>
+                <span class="text-muted" style="width: 30px;">3%</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span style="width: 45px;">2 Star</span>
+                <div class="progress flex-grow-1" style="height: 6px;"><div class="progress-bar bg-warning" style="width: 1%"></div></div>
+                <span class="text-muted" style="width: 30px;">1%</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span style="width: 45px;">1 Star</span>
+                <div class="progress flex-grow-1" style="height: 6px;"><div class="progress-bar bg-warning" style="width: 1%"></div></div>
+                <span class="text-muted" style="width: 30px;">1%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Reviews list & Write Review Form (col-md-8) -->
+        <div class="col-md-8 col-12">
+          
+          <!-- Reviews list -->
+          <div class="d-flex flex-column gap-3 mb-4" id="reviews-list-container">
+            <!-- filled by product.js -->
+          </div>
+
+          <!-- Add Review form card -->
+          <div class="p-4 bg-card border rounded-4 shadow-sm mt-4">
+            <h5 class="fw-bold mb-3">Write a Customer Review</h5>
+            <form id="writeReviewForm">
+              
+              <!-- Star rating picker input -->
+              <div class="mb-3">
+                <label class="form-label text-sm fw-bold">Select Rating:</label>
+                <div class="star-rating-picker text-warning fs-4" style="cursor: pointer;">
+                  <i class="fa-regular fa-star star-select" data-rating="1"></i>
+                  <i class="fa-regular fa-star star-select" data-rating="2"></i>
+                  <i class="fa-regular fa-star star-select" data-rating="3"></i>
+                  <i class="fa-regular fa-star star-select" data-rating="4"></i>
+                  <i class="fa-regular fa-star star-select" data-rating="5"></i>
+                </div>
+                <input type="hidden" id="formRatingVal" value="5">
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6 col-12">
+                  <div class="form-floating">
+                    <input type="text" class="form-control rounded-3" id="reviewerName" placeholder="Your Name" required>
+                    <label for="reviewerName">Your Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-12">
+                  <div class="form-floating">
+                    <input type="email" class="form-control rounded-3" id="reviewerEmail" placeholder="Your Email (Private)" required>
+                    <label for="reviewerEmail">Your Email</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <textarea class="form-control rounded-3" id="reviewComment" placeholder="Write comment here..." style="height: 100px" required></textarea>
+                <label for="reviewComment">Review Comment</label>
+              </div>
+
+              <button type="submit" class="btn btn-peach px-4 py-2.5 rounded-pill font-weight-bold text-sm">
+                Submit Verified Review
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="mt-5 py-5 text-white" style="background-color: var(--bg-footer);">
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="haoye-logo mb-3">
+            <svg viewBox="0 0 140 40" style="width: 130px; height: 38px;">
+              <text x="5" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="url(#logoGradient)">Ha</text>
+              <text x="42" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="#10b981">Oye</text>
+              <path d="M96,15 L101,20 L112,9" stroke="#ff6a3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+              <circle cx="104" cy="16" r="13" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="3,3" />
+            </svg>
+          </a>
+          <p class="text-xs text-muted pr-lg-5">HaOye is Pakistan's No.1 trusted storefront comparison e-commerce. Re-engineered with modern elements, responsive performance, and a dark mode designed for tech lovers.</p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="#" class="text-white"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="mb-3 text-peach">Customer Service</h5>
+          <ul class="list-unstyled text-xs d-flex flex-column gap-2 text-muted">
+            <li><a href="#" class="text-muted text-decoration-none">Help Center</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Track Order</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Open Parcel Policy</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Returns & Refunds</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="mb-3 text-peach">Information</h5>
+          <ul class="list-unstyled text-xs d-flex flex-column gap-2 text-muted">
+            <li><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Careers</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5 class="mb-3 text-peach">Secure Payments</h5>
+          <p class="text-xs text-muted mb-3">We support cash on delivery, credit/debit card transfers, and popular mobile wallet systems.</p>
+          <div class="d-flex flex-wrap gap-2 fs-3">
+            <i class="fa-brands fa-cc-visa text-white-50"></i>
+            <i class="fa-brands fa-cc-mastercard text-white-50"></i>
+            <i class="fa-solid fa-money-bill-1 text-white-50"></i>
+            <i class="fa-solid fa-wallet text-white-50"></i>
+          </div>
+        </div>
+
+      </div>
+      <hr class="my-4 border-secondary">
+      <div class="text-center text-xs text-muted">
+        &copy; 2026 HaOye.pk. Rebuilt for modern premium standards. Developed with HTML, CSS, JS, Bootstrap, and jQuery.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Comparison Drawer -->
+  <div class="floating-compare-bar">
+    <div class="d-flex align-items-center gap-4">
+      <div>
+        <h6 class="mb-0 fw-bold">Compare Products</h6>
+        <span class="compare-count-text text-muted text-xs">0 of 3 selected</span>
+      </div>
+      <div class="compare-tray-items"></div>
+    </div>
+    <a href="compare.html" class="btn btn-peach compare-btn-action disabled px-4 rounded-pill font-weight-bold text-xs">Compare Now</a>
+  </div>
+
+  <!-- Cart Drawer Sidebar -->
+  <div class="cart-drawer-backdrop"></div>
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h5 class="mb-0 fw-bold"><i class="fa-solid fa-cart-shopping me-2"></i>My Cart</h5>
+      <button class="btn btn-close close-cart" aria-label="Close"></button>
+    </div>
+    <div class="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span class="cart-subtotal">Rs. 0</span>
+      </div>
+      <a href="checkout.html" class="btn checkout-btn card-action-btn w-100 py-3 mt-0 text-white rounded-pill text-sm d-flex align-items-center justify-content-center gap-2">
+        Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- City Picker modal -->
+  <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel" style="border-radius: 20px;">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="locationModalLabel">Select Your City</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-3">
+          <p class="text-xs text-muted mb-3">Choose your city for accurate shipping estimates.</p>
+          <div class="row g-2">
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Islamabad">Islamabad</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Lahore">Lahore</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Karachi">Karachi</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Rawalpindi">Rawalpindi</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Faisalabad">Faisalabad</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Multan">Multan</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Voice overlay -->
+  <div class="voice-overlay">
+    <div class="voice-wave-container">
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+    </div>
+    <div class="voice-transcript">Listening... Try saying "iPhone 15"</div>
+    <button class="voice-close-btn"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/product.js"></script>
+</body>
+</html>

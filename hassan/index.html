@@ -1,0 +1,453 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HaOye - Lowest Mobile & Electronics Price In Pakistan</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="HaOye is Pakistan's No.1 premium marketplace for buying original smartphones and electronics at the guaranteed lowest prices with Open Parcel Delivery.">
+  <meta name="keywords" content="Online Shopping in Pakistan, Mobile prices, Buy iPhone 15 Pro, Samsung Galaxy S24, Earbuds, Smartwatches, lowest price">
+  
+  <!-- CSS Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="haoye-top-bar">
+    ⚡ <strong>GRAND OPENING SALE!</strong> Get an extra Rs. 2,000 off on your first order. Use code: <span class="bg-white text-dark px-2 py-0.5 rounded font-weight-bold">HAOYE2K</span> | <a href="category.html">Shop Now</a>
+  </div>
+
+  <!-- Global Navigation Header -->
+  <nav class="haoye-navbar">
+    <div class="container d-flex align-items-center justify-content-between gap-3">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="haoye-logo">
+        <svg viewBox="0 0 140 40" style="width: 130px; height: 38px;">
+          <defs>
+            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff6a3d" />
+              <stop offset="100%" stop-color="#ff983d" />
+            </linearGradient>
+          </defs>
+          <text x="5" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="url(#logoGradient)">Ha</text>
+          <text x="42" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="#10b981">Oye</text>
+          <path d="M96,15 L101,20 L112,9" stroke="#ff6a3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <circle cx="104" cy="16" r="13" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="3,3" />
+        </svg>
+      </a>
+
+      <!-- Smart Search Input Box -->
+      <div class="search-container d-none d-md-block flex-grow-1 mx-3">
+        <input type="text" class="search-input" placeholder="Search mobile phones, smart watches, earbuds...">
+        <button class="search-mic voice-trigger-btn"><i class="fa-solid fa-microphone"></i></button>
+        
+        <!-- Suggestions Autocomplete overlay -->
+        <div class="search-suggestions"></div>
+      </div>
+
+      <!-- Action Utilities -->
+      <div class="d-flex align-items-center gap-3">
+        
+        <!-- Location Picker Button -->
+        <button class="btn btn-link nav-link text-decoration-none d-none d-lg-flex align-items-center gap-1 text-muted" data-bs-toggle="modal" data-bs-target="#locationModal">
+          <i class="fa-solid fa-location-dot text-peach"></i>
+          <span class="location-name font-weight-bold" style="font-size: 0.85rem;">Select Location</span>
+        </button>
+
+        <!-- Dark/Light Theme Button -->
+        <button class="nav-action-btn theme-toggle-btn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- Dynamic Compare Tray Trigger -->
+        <a href="compare.html" class="nav-action-btn compare-trigger position-relative d-none d-md-flex" aria-label="Compare Products">
+          <i class="fa-solid fa-code-compare"></i>
+        </a>
+
+        <!-- Cart Drawer Trigger -->
+        <button class="nav-action-btn cart-trigger" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge-count cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Search Bar -->
+  <div class="container d-md-none my-3">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search products...">
+      <button class="search-mic voice-trigger-btn"><i class="fa-solid fa-microphone"></i></button>
+      <div class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <!-- Horizontal Scrollable Category Ribbon -->
+  <div class="category-ribbon">
+    <div class="category-ribbon-inner">
+      <a href="category.html?cat=mobiles" class="category-link">
+        <div class="category-icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <span>Mobiles</span>
+      </a>
+      <a href="category.html?cat=watches" class="category-link">
+        <div class="category-icon-box"><i class="fa-solid fa-stopwatch"></i></div>
+        <span>Smart Watches</span>
+      </a>
+      <a href="category.html?cat=earbuds" class="category-link">
+        <div class="category-icon-box"><i class="fa-solid fa-headphones"></i></div>
+        <span>Wireless Earbuds</span>
+      </a>
+      <a href="category.html?cat=speakers" class="category-link">
+        <div class="category-icon-box"><i class="fa-solid fa-volume-high"></i></div>
+        <span>Speakers</span>
+      </a>
+      <a href="category.html?cat=powerbanks" class="category-link">
+        <div class="category-icon-box"><i class="fa-solid fa-battery-three-quarters"></i></div>
+        <span>Power Banks</span>
+      </a>
+      <a href="category.html?cat=chargers" class="category-link">
+        <div class="category-icon-box"><i class="fa-solid fa-bolt"></i></div>
+        <span>Chargers</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Body Content -->
+  <main class="container py-4">
+
+    <!-- Swiper Hero Banner Carousel -->
+    <div class="swiper hero-slider">
+      <div class="swiper-wrapper">
+        
+        <!-- Slide 1 -->
+        <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=1200');">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="hero-badge animate__animated animate__fadeInDown">HaOye Exclusive Deals</span>
+            <h2 class="hero-title animate__animated animate__fadeInLeft">Lowest Prices on iPhone 15 Pro</h2>
+            <p class="hero-desc animate__animated animate__fadeInUp">Get genuine Apple products with guaranteed Lowest Price and Open Parcel Delivery across Pakistan.</p>
+            <a href="product.html?id=iphone-15-pro-max" class="btn hero-btn">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&q=80&w=1200');">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="hero-badge">Smart Wearables</span>
+            <h2 class="hero-title">Upgrade Your Style with Smartwatches</h2>
+            <p class="hero-desc">Up to 40% OFF on Samsung, Xiaomi, and Apple watches. Track your health, sleep, and fitness on the go.</p>
+            <a href="category.html?cat=watches" class="btn hero-btn">Explore Watches</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=1200');">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="hero-badge">True Wireless Audio</span>
+            <h2 class="hero-title">Immersive Sound, Ultimate Freedom</h2>
+            <p class="hero-desc">Grab the latest active noise cancelling earbuds from Anker Soundcore and Redmi starting from Rs. 4,999.</p>
+            <a href="category.html?cat=earbuds" class="btn hero-btn">Shop Earbuds</a>
+          </div>
+        </div>
+
+      </div>
+      <!-- Add Swiper Navigation/Pagination -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next text-white"></div>
+      <div class="swiper-button-prev text-white"></div>
+    </div>
+
+    <!-- HaOye Trust Badges Grid -->
+    <div class="row g-3 mt-4">
+      <div class="col-md-3 col-6">
+        <div class="guarantee-box">
+          <div class="guarantee-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <div>
+            <h6 class="mb-1 fw-bold">HaOye Assured</h6>
+            <p class="text-xs text-muted mb-0">100% Original Brand Products</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="guarantee-box">
+          <div class="guarantee-icon text-success"><i class="fa-solid fa-box-open"></i></div>
+          <div>
+            <h6 class="mb-1 fw-bold">Open Parcel</h6>
+            <p class="text-xs text-muted mb-0">Check parcel before paying</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="guarantee-box">
+          <div class="guarantee-icon text-warning"><i class="fa-solid fa-truck-fast"></i></div>
+          <div>
+            <h6 class="mb-1 fw-bold">Fast Shipping</h6>
+            <p class="text-xs text-muted mb-0">24-48 Hours Delivery</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="guarantee-box">
+          <div class="guarantee-icon text-danger"><i class="fa-solid fa-rotate-left"></i></div>
+          <div>
+            <h6 class="mb-1 fw-bold">Easy Returns</h6>
+            <p class="text-xs text-muted mb-0">7-Day Hassle Free Return</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Flash Sale Section -->
+    <div class="flash-sale-container">
+      <div class="flash-title-row">
+        <div class="flash-header">
+          <span class="flash-badge"><i class="fa-solid fa-bolt me-2"></i>FLASH SALE</span>
+          <div class="countdown-box">
+            <span class="text-muted fw-bold text-xs d-none d-sm-inline">ENDS IN:</span>
+            <div class="countdown-number timer-hours">03</div>
+            <span class="countdown-colon">:</span>
+            <div class="countdown-number timer-minutes">45</div>
+            <span class="countdown-colon">:</span>
+            <div class="countdown-number timer-seconds">12</div>
+          </div>
+        </div>
+        <a href="category.html" class="btn btn-outline-peach rounded-pill fw-bold text-xs px-4">View All Deals</a>
+      </div>
+
+      <!-- Flash sale product cards -->
+      <div class="row g-4" id="flash-products-grid">
+        <!-- Will be populated dynamically by home.js -->
+      </div>
+    </div>
+
+    <!-- Shop By Price Segment -->
+    <div class="mt-5">
+      <h3 class="mb-4">Shop By Price</h3>
+      <div class="row g-3">
+        <div class="col-lg-2.4 col-md-4 col-6">
+          <a href="category.html?price_max=15000" class="price-btn d-block text-decoration-none">Under Rs. 15,000</a>
+        </div>
+        <div class="col-lg-2.4 col-md-4 col-6">
+          <a href="category.html?price_max=25000" class="price-btn d-block text-decoration-none">Rs. 15,000 - 25,000</a>
+        </div>
+        <div class="col-lg-2.4 col-md-4 col-6">
+          <a href="category.html?price_max=50000" class="price-btn d-block text-decoration-none">Rs. 25,000 - 50,000</a>
+        </div>
+        <div class="col-lg-2.4 col-md-4 col-6">
+          <a href="category.html?price_max=100000" class="price-btn d-block text-decoration-none">Rs. 50,000 - 100,000</a>
+        </div>
+        <div class="col-lg-2.4 col-md-4 col-6">
+          <a href="category.html?price_min=100000" class="price-btn d-block text-decoration-none">Above Rs. 100,000</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shop By Brand Segment -->
+    <div class="mt-5">
+      <h3 class="mb-4">Shop By Brand</h3>
+      <div class="row g-3">
+        <div class="col-md-3 col-6 col-lg-1.5">
+          <div class="brand-card" data-brand="Apple">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+          </div>
+        </div>
+        <div class="col-md-3 col-6 col-lg-1.5">
+          <div class="brand-card" data-brand="Samsung">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung">
+          </div>
+        </div>
+        <div class="col-md-3 col-6 col-lg-1.5">
+          <div class="brand-card" data-brand="Xiaomi">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Xiaomi_logo_%282021-%29.svg" alt="Xiaomi">
+          </div>
+        </div>
+        <div class="col-md-3 col-6 col-lg-1.5">
+          <div class="brand-card" data-brand="Infinix">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Infinix_Mobility_Logo.svg" alt="Infinix" style="width: 100px;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trending Products Grid tabs -->
+    <div class="mt-5">
+      <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+        <h3>Trending Devices</h3>
+        <ul class="nav nav-pills custom-pills" id="trendingTabs" role="tablist">
+          <li class="nav-item">
+            <button class="nav-link active rounded-pill px-4" data-category="all" type="button">All Categories</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link rounded-pill px-4" data-category="mobiles" type="button">Mobiles</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link rounded-pill px-4" data-category="watches" type="button">Watches</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link rounded-pill px-4" data-category="earbuds" type="button">Earbuds</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab content grid -->
+      <div class="row g-4" id="trending-products-grid">
+        <!-- Will be populated dynamically by home.js -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="mt-5 py-5 text-white" style="background-color: var(--bg-footer);">
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="haoye-logo mb-3">
+            <svg viewBox="0 0 140 40" style="width: 130px; height: 38px;">
+              <text x="5" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="url(#logoGradient)">Ha</text>
+              <text x="42" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="#10b981">Oye</text>
+              <path d="M96,15 L101,20 L112,9" stroke="#ff6a3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+              <circle cx="104" cy="16" r="13" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="3,3" />
+            </svg>
+          </a>
+          <p class="text-xs text-muted pr-lg-5">HaOye is Pakistan's No.1 trusted storefront comparison e-commerce. Re-engineered with modern elements, responsive performance, and a dark mode designed for tech lovers.</p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="#" class="text-white"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="mb-3 text-peach">Customer Service</h5>
+          <ul class="list-unstyled text-xs d-flex flex-column gap-2 text-muted">
+            <li><a href="#" class="text-muted text-decoration-none">Help Center</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Track Order</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Open Parcel Policy</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Returns & Refunds</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="mb-3 text-peach">Information</h5>
+          <ul class="list-unstyled text-xs d-flex flex-column gap-2 text-muted">
+            <li><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Careers</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5 class="mb-3 text-peach">Secure Payments</h5>
+          <p class="text-xs text-muted mb-3">We support cash on delivery, credit/debit card transfers, and popular mobile wallet systems.</p>
+          <div class="d-flex flex-wrap gap-2 fs-3">
+            <i class="fa-brands fa-cc-visa text-white-50"></i>
+            <i class="fa-brands fa-cc-mastercard text-white-50"></i>
+            <i class="fa-solid fa-money-bill-1 text-white-50"></i>
+            <i class="fa-solid fa-wallet text-white-50"></i>
+          </div>
+        </div>
+
+      </div>
+      <hr class="my-4 border-secondary">
+      <div class="text-center text-xs text-muted">
+        &copy; 2026 HaOye.pk. Rebuilt for modern premium standards. Developed with HTML, CSS, JS, Bootstrap, and jQuery.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Comparison tray (Bottom Drawer) -->
+  <div class="floating-compare-bar">
+    <div class="d-flex align-items-center gap-4">
+      <div>
+        <h6 class="mb-0 fw-bold">Compare Products</h6>
+        <span class="compare-count-text text-muted text-xs">0 of 3 selected</span>
+      </div>
+      <div class="compare-tray-items">
+        <!-- tray items populated dynamically by app.js -->
+      </div>
+    </div>
+    <a href="compare.html" class="btn btn-peach compare-btn-action disabled px-4 rounded-pill font-weight-bold text-xs">Compare Now</a>
+  </div>
+
+  <!-- Cart Drawer Sidebar -->
+  <div class="cart-drawer-backdrop"></div>
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h5 class="mb-0 fw-bold"><i class="fa-solid fa-cart-shopping me-2"></i>My Cart</h5>
+      <button class="btn btn-close close-cart" aria-label="Close"></button>
+    </div>
+    
+    <!-- Cart Items list container -->
+    <div class="cart-drawer-items"></div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span class="cart-subtotal">Rs. 0</span>
+      </div>
+      <a href="checkout.html" class="btn checkout-btn card-action-btn w-100 py-3 mt-0 text-white rounded-pill text-sm d-flex align-items-center justify-content-center gap-2">
+        Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Simulated Voice Search Listening Modal Overlay -->
+  <div class="voice-overlay">
+    <div class="voice-wave-container">
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+    </div>
+    <div class="voice-transcript">Listening... Try saying "iPhone 15"</div>
+    <button class="voice-close-btn"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+
+  <!-- Modal Location Picker -->
+  <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel" style="border-radius: 20px;">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="locationModalLabel">Select Your City</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-3">
+          <p class="text-xs text-muted mb-3">Choose your city for accurate shipping estimates and cash on delivery eligibility.</p>
+          <div class="row g-2" id="cityList">
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Islamabad">Islamabad</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Lahore">Lahore</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Karachi">Karachi</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Rawalpindi">Rawalpindi</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Faisalabad">Faisalabad</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Multan">Multan</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

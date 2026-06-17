@@ -1,0 +1,379 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Products - HaOye Storefront</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="haoye-top-bar">
+    ⚡ <strong>GRAND OPENING SALE!</strong> Get an extra Rs. 2,000 off on your first order. Use code: <span class="bg-white text-dark px-2 py-0.5 rounded font-weight-bold">HAOYE2K</span> | <a href="category.html">Shop Now</a>
+  </div>
+
+  <!-- Global Header Navbar -->
+  <nav class="haoye-navbar">
+    <div class="container d-flex align-items-center justify-content-between gap-3">
+      
+      <a href="index.html" class="haoye-logo">
+        <svg viewBox="0 0 140 40" style="width: 130px; height: 38px;">
+          <text x="5" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="url(#logoGradient)">Ha</text>
+          <text x="42" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="#10b981">Oye</text>
+          <path d="M96,15 L101,20 L112,9" stroke="#ff6a3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <circle cx="104" cy="16" r="13" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="3,3" />
+        </svg>
+      </a>
+
+      <!-- Search Box -->
+      <div class="search-container d-none d-md-block flex-grow-1 mx-3">
+        <input type="text" class="search-input" placeholder="Search products...">
+        <button class="search-mic voice-trigger-btn"><i class="fa-solid fa-microphone"></i></button>
+        <div class="search-suggestions"></div>
+      </div>
+
+      <!-- Action Utilities -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-link nav-link text-decoration-none d-none d-lg-flex align-items-center gap-1 text-muted" data-bs-toggle="modal" data-bs-target="#locationModal">
+          <i class="fa-solid fa-location-dot text-peach"></i>
+          <span class="location-name font-weight-bold" style="font-size: 0.85rem;">Select Location</span>
+        </button>
+
+        <button class="nav-action-btn theme-toggle-btn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="compare.html" class="nav-action-btn compare-trigger position-relative d-none d-md-flex" aria-label="Compare Products">
+          <i class="fa-solid fa-code-compare"></i>
+        </a>
+
+        <button class="nav-action-btn cart-trigger" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge-count cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Search Bar -->
+  <div class="container d-md-none my-3">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search products...">
+      <button class="search-mic voice-trigger-btn"><i class="fa-solid fa-microphone"></i></button>
+      <div class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <!-- Main Listing Viewport -->
+  <main class="container py-4">
+    
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb text-sm">
+        <li class="breadcrumb-item"><a href="index.html" class="text-peach text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item active text-muted" aria-current="page" id="breadcrumb-category">All Categories</li>
+      </ol>
+    </nav>
+
+    <!-- Main Sidebar + Grid Grid Row -->
+    <div class="row g-4">
+      
+      <!-- Sidebar Filters Section (col-lg-3) -->
+      <aside class="col-lg-3 d-none d-lg-block">
+        <div class="filter-card">
+          <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
+            <h5 class="fw-bold mb-0">Filters</h5>
+            <button class="btn btn-link text-peach text-decoration-none text-xs p-0 reset-filters-btn">Clear All</button>
+          </div>
+
+          <!-- Category filter Section -->
+          <div class="filter-section">
+            <h6 class="filter-title">Category</h6>
+            <div class="d-flex flex-column gap-2 text-sm">
+              <div class="form-check">
+                <input class="form-check-input category-filter-chk" type="checkbox" value="mobiles" id="cat-mob">
+                <label class="form-check-label text-dark-50" for="cat-mob">Mobiles</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category-filter-chk" type="checkbox" value="watches" id="cat-wat">
+                <label class="form-check-label text-dark-50" for="cat-wat">Smart Watches</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category-filter-chk" type="checkbox" value="earbuds" id="cat-ear">
+                <label class="form-check-label text-dark-50" for="cat-ear">Wireless Earbuds</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price Range Slider Section -->
+          <div class="filter-section">
+            <h6 class="filter-title">Price Range (Rs.)</h6>
+            <div class="price-slider-container">
+              <div class="slider-track-bar">
+                <div class="slider-active-range"></div>
+                <div class="slider-handle handle-left"></div>
+                <div class="slider-handle handle-right"></div>
+              </div>
+              <div class="price-input-row">
+                <input type="text" class="price-input-field price-min-input" readonly value="0">
+                <input type="text" class="price-input-field price-max-input" readonly value="500,000">
+              </div>
+            </div>
+          </div>
+
+          <!-- Brand checklist Section -->
+          <div class="filter-section">
+            <h6 class="filter-title">Brand</h6>
+            <div class="d-flex flex-column gap-2 text-sm" id="brand-filters-container">
+              <div class="form-check">
+                <input class="form-check-input brand-filter-chk" type="checkbox" value="Apple" id="br-apple">
+                <label class="form-check-label text-dark-50" for="br-apple">Apple</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input brand-filter-chk" type="checkbox" value="Samsung" id="br-samsung">
+                <label class="form-check-label text-dark-50" for="br-samsung">Samsung</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input brand-filter-chk" type="checkbox" value="Xiaomi" id="br-xiaomi">
+                <label class="form-check-label text-dark-50" for="br-xiaomi">Xiaomi</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input brand-filter-chk" type="checkbox" value="Infinix" id="br-infinix">
+                <label class="form-check-label text-dark-50" for="br-infinix">Infinix</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input brand-filter-chk" type="checkbox" value="Anker" id="br-anker">
+                <label class="form-check-label text-dark-50" for="br-anker">Anker / Soundcore</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specs: RAM section -->
+          <div class="filter-section specs-filter-div">
+            <h6 class="filter-title">RAM</h6>
+            <div class="d-flex flex-column gap-2 text-sm">
+              <div class="form-check">
+                <input class="form-check-input ram-filter-chk" type="checkbox" value="8 GB" id="ram-8">
+                <label class="form-check-label text-dark-50" for="ram-8">8 GB</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input ram-filter-chk" type="checkbox" value="12 GB" id="ram-12">
+                <label class="form-check-label text-dark-50" for="ram-12">12 GB</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input ram-filter-chk" type="checkbox" value="16 GB" id="ram-16">
+                <label class="form-check-label text-dark-50" for="ram-16">16 GB</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- Right Column Listing Panel (col-lg-9) -->
+      <section class="col-lg-9 col-12">
+        
+        <!-- Sorting and Toolbar Header -->
+        <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3 p-3 bg-card border rounded-4 shadow-sm" style="transition: var(--transition-smooth);">
+          <div>
+            <h4 class="fw-bold mb-0 text-peach" id="category-title-heading">All Electronics</h4>
+            <span class="text-xs text-muted" id="results-count-text">Showing 0 products</span>
+          </div>
+          
+          <div class="d-flex align-items-center gap-3 flex-wrap">
+            <button class="btn btn-outline-secondary rounded-pill text-sm px-3 d-lg-none" id="mobile-filter-trigger">
+              <i class="fa-solid fa-sliders me-1"></i> Filters
+            </button>
+            <div class="d-flex align-items-center gap-2">
+              <label class="text-xs text-muted fw-bold text-nowrap mb-0" for="sortSelect">SORT BY:</label>
+              <select class="form-select form-select-sm rounded-pill px-3 py-1.5" id="sortSelect" style="width: 160px; font-size: 0.8rem; font-weight: 700;">
+                <option value="popularity">Most Popular</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="discount">Highest Discount</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Cards Listing Grid -->
+        <div class="row g-4" id="listings-grid">
+          <!-- Populated dynamically by category.js -->
+        </div>
+
+        <!-- Empty state block -->
+        <div class="d-none flex-column align-items-center justify-content-center py-5 text-center" id="listings-empty-state">
+          <i class="fa-regular fa-folder-open text-muted mb-3" style="font-size: 4rem;"></i>
+          <h4 class="fw-bold">No Products Found</h4>
+          <p class="text-sm text-muted">Try resetting your filters or adjusting your price limits!</p>
+          <button class="btn btn-peach rounded-pill px-4 reset-filters-btn mt-2">Reset All Filters</button>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="mt-5 py-5 text-white" style="background-color: var(--bg-footer);">
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="haoye-logo mb-3">
+            <svg viewBox="0 0 140 40" style="width: 130px; height: 38px;">
+              <text x="5" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="url(#logoGradient)">Ha</text>
+              <text x="42" y="30" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="#10b981">Oye</text>
+              <path d="M96,15 L101,20 L112,9" stroke="#ff6a3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+              <circle cx="104" cy="16" r="13" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="3,3" />
+            </svg>
+          </a>
+          <p class="text-xs text-muted pr-lg-5">HaOye is Pakistan's No.1 trusted storefront comparison e-commerce. Re-engineered with modern elements, responsive performance, and a dark mode designed for tech lovers.</p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="#" class="text-white"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="mb-3 text-peach">Customer Service</h5>
+          <ul class="list-unstyled text-xs d-flex flex-column gap-2 text-muted">
+            <li><a href="#" class="text-muted text-decoration-none">Help Center</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Track Order</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Open Parcel Policy</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Returns & Refunds</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="mb-3 text-peach">Information</h5>
+          <ul class="list-unstyled text-xs d-flex flex-column gap-2 text-muted">
+            <li><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Careers</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5 class="mb-3 text-peach">Secure Payments</h5>
+          <p class="text-xs text-muted mb-3">We support cash on delivery, credit/debit card transfers, and popular mobile wallet systems.</p>
+          <div class="d-flex flex-wrap gap-2 fs-3">
+            <i class="fa-brands fa-cc-visa text-white-50"></i>
+            <i class="fa-brands fa-cc-mastercard text-white-50"></i>
+            <i class="fa-solid fa-money-bill-1 text-white-50"></i>
+            <i class="fa-solid fa-wallet text-white-50"></i>
+          </div>
+        </div>
+
+      </div>
+      <hr class="my-4 border-secondary">
+      <div class="text-center text-xs text-muted">
+        &copy; 2026 HaOye.pk. Rebuilt for modern premium standards. Developed with HTML, CSS, JS, Bootstrap, and jQuery.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Comparison Drawer -->
+  <div class="floating-compare-bar">
+    <div class="d-flex align-items-center gap-4">
+      <div>
+        <h6 class="mb-0 fw-bold">Compare Products</h6>
+        <span class="compare-count-text text-muted text-xs">0 of 3 selected</span>
+      </div>
+      <div class="compare-tray-items"></div>
+    </div>
+    <a href="compare.html" class="btn btn-peach compare-btn-action disabled px-4 rounded-pill font-weight-bold text-xs">Compare Now</a>
+  </div>
+
+  <!-- Cart Drawer Sidebar -->
+  <div class="cart-drawer-backdrop"></div>
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h5 class="mb-0 fw-bold"><i class="fa-solid fa-cart-shopping me-2"></i>My Cart</h5>
+      <button class="btn btn-close close-cart" aria-label="Close"></button>
+    </div>
+    <div class="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span class="cart-subtotal">Rs. 0</span>
+      </div>
+      <a href="checkout.html" class="btn checkout-btn card-action-btn w-100 py-3 mt-0 text-white rounded-pill text-sm d-flex align-items-center justify-content-center gap-2">
+        Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile Filter Overlay Modal Drawer -->
+  <div class="modal fade" id="mobileFilterModal" tabindex="-1" aria-labelledby="mobileFilterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-sm-down">
+      <div class="modal-content glass-panel" style="border-radius: 20px;">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold" id="mobileFilterModalLabel"><i class="fa-solid fa-sliders me-2"></i>Filters</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="mobileFilterContainer">
+          <!-- Filled dynamically by cloning desktop elements in category.js -->
+        </div>
+        <div class="modal-footer border-top d-flex gap-2">
+          <button type="button" class="btn btn-outline-secondary flex-grow-1 rounded-pill reset-filters-btn" data-bs-dismiss="modal">Clear All</button>
+          <button type="button" class="btn btn-peach flex-grow-1 rounded-pill" data-bs-dismiss="modal">Apply Filters</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location Picker Modal -->
+  <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel" style="border-radius: 20px;">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="locationModalLabel">Select Your City</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-3">
+          <p class="text-xs text-muted mb-3">Choose your city for accurate shipping estimates.</p>
+          <div class="row g-2">
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Islamabad">Islamabad</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Lahore">Lahore</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Karachi">Karachi</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Rawalpindi">Rawalpindi</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Faisalabad">Faisalabad</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary w-100 rounded-pill text-sm location-btn" data-city="Multan">Multan</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simulated Voice Search Listen Modal -->
+  <div class="voice-overlay">
+    <div class="voice-wave-container">
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+      <div class="voice-wave-bar"></div>
+    </div>
+    <div class="voice-transcript">Listening... Try saying "iPhone 15"</div>
+    <button class="voice-close-btn"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/category.js"></script>
+</body>
+</html>
